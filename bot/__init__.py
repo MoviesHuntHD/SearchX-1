@@ -210,13 +210,13 @@ except:
     pass
 
 try:
-    APPDRIVE_EMAIL = get_config('APPDRIVE_EMAIL')
-    APPDRIVE_PASS = get_config('APPDRIVE_PASS')
-    if len(APPDRIVE_EMAIL) == 0 or len(APPDRIVE_PASS) == 0:
+    UNIFIED_EMAIL = get_config('UNIFIED_EMAIL')
+    APPDRIVE_PASS = get_config('UNIFIED_PASS')
+    if len(UNIFIED_EMAIL) == 0 or len(UNIFIED_PASS) == 0:
         raise KeyError
 except:
-    APPDRIVE_EMAIL = None
-    APPDRIVE_PASS = None
+    UNIFIED_EMAIL = None
+    UNIFIED_PASS = None
 
 try:
     GDTOT_CRYPT = get_config('GDTOT_CRYPT')
@@ -224,7 +224,37 @@ try:
         raise KeyError
 except:
     GDTOT_CRYPT = None
+    
+try:
+    HUBDRIVE_CRYPT = get_config('HUBDRIVE_CRYPT')
+    if len(HUBDRIVE_CRYPT) == 0:
+        raise KeyError
+except:
+    HUBDRIVE_CRYPT = None
 
+try:
+    KATDRIVE_CRYPT = get_config('KATDRIVE_CRYPT')
+    if len(KATDRIVE_CRYPT) == 0:
+        raise KeyError
+except:
+    KATDRIVE_CRYPT = None
+
+try:
+    DRIVEFIRE_CRYPT = get_config('DRIVEFIRE_CRYPT')
+    if len(DRIVEFIRE_CRYPT) == 0:
+        raise KeyError
+except:
+    DRIVEFIRE_CRYPT = None
+    
+try:
+    XSRF_TOKEN = get_config('XSRF_TOKEN')
+    laravel_session = get_config('laravel_session')
+    if len(XSRF_TOKEN) == 0 or len(laravel_session) == 0:
+        raise KeyError
+except:
+    XSRF_TOKEN = None
+    laravel_session = None
+    
 if os.path.exists('drive_list'):
     with open('drive_list', 'r+') as f:
         lines = f.readlines()
