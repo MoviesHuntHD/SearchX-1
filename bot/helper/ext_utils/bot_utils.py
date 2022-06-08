@@ -95,12 +95,20 @@ def get_readable_time(seconds: int) -> str:
 def is_gdrive_link(url: str):
     return "drive.google.com" in url
 
-def is_appdrive_link(url: str):
-    url = re.match(r'https?://(appdrive|driveapp)\.in/\S+', url)
+def is_unified_link(url: str):
+    url = re.match(r'https?://(appdrive|driveapp|driveace|gdflix|drivelinks|drivebit|drivesharer|drivepro)\.\S+', url)
     return bool(url)
 
 def is_gdtot_link(url: str):
     url = re.match(r'https?://.+\.gdtot\.\S+', url)
+    return bool(url)
+
+def is_udrive_link(url: str):
+    url = re.match(r'https?://(hubdrive|drivehub|katdrive|kolop|drivefire|drivebuzz)\.\S+', url)
+    return bool(url)
+
+def is_sharer_link(url: str):
+    url = re.match(r'https?://(sharer)\.pw/\S+', url)
     return bool(url)
 
 def new_thread(fn):
