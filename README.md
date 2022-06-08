@@ -35,5 +35,6 @@ List of changes made to the bot
 Read this if you have any queries
 
 ### [Credits](https://github.com/l3v11/SearchX/wiki/Credits)
+### Special Thanks to [Maverick](https://github.com/majnurangeela) for integration of multi sharer scripts.
 
 List of contributors of the bot
